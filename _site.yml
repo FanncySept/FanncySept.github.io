@@ -5,7 +5,7 @@ navbar:
   type: default                 #inverse
 
 
-title: "C.F. Zhang"      
+title: "C. Zhang"      
 output:
   html_document:
     toc: false
