@@ -4,6 +4,7 @@ navbar:
   title: "Chunfang Zhang's Homepage"                             # CHANGE HERE 
   type: default                 #inverse
 
+
 title: "C.F. Zhang"      
 output:
   html_document:
