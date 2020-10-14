@@ -1,5 +1,4 @@
 ---
-title: " "
 bibliography: Fanncy2020.bib
 nocite: |
   @Zhang2017, @Afify2019, @Bai2020, @Zhang2017a, @Zhang2016, @Liu2017, @Dey2017, @Zhang2016a, 
