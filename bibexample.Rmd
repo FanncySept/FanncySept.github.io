@@ -1,0 +1,8 @@
+---
+title: "Sample Document"
+output: html_document
+bibliography: EEGbib0602.bib
+---
+
+Blah blah [@Tang2014; @Czado2019].
+

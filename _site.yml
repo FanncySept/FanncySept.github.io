@@ -1,0 +1,16 @@
+name: "Fanncy"                                # CHANGE HERE 
+output_dir: "."
+navbar:
+  title: "Chunfang Zhang's Homepage"                             # CHANGE HERE 
+  type: default                 #inverse
+      
+output:
+  html_document:
+    toc: false
+    toc_float: false
+    theme: cosmo                                     #simplex #united     #cosmo  yeti 
+    highlight: textmate
+    css: style.css
+
+header_includes:
+ - \usepackage{table}
