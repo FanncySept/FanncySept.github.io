@@ -1,0 +1,130 @@
+---
+pagetitle: "C. Zhang"   
+bibliography: Fanncy2020.bib
+nocite: |
+  @Zhang2017, @Afify2019, @Bai2020, @Zhang2017a, @Zhang2016, @Liu2017, @Dey2017, @Zhang2016a, 
+csl: usda-forest-service-pacific-northwest-research-station.csl
+---
+
+<table>
+    <tbody>
+    <tr>
+      <td>
+        <table width="100%" align="left" border="0" cellspacing="0" cellpadding="12" style="table-layout:fixed;">
+          <colgroup>
+            <col span="1" style="width: 30%;">
+            <col span="1" style="width: 70%;">
+          </colgroup>
+        <tr>
+            <td > <input type="image" src="images/fanncy.jpg" alt="Submit" width="248" height="248"> </td>
+            <td> 
+               <p align=left> <font size=6> Chunfang Zhang</font> </p>
+               <p align=left> <font size=4> School of Mathematics and Statistics, <br>
+                      Xidian University, <br> 
+                      266 Xinglong Section of Xifeng Road, <br> Xi’an 710126, China </font> </a> </p>
+               <p align=left>Contact: cfzhang917@xidian.edu.cn </p>
+               <p align=left>Office: 205 West, Xinyuan Building II </p>
+            </td>
+        </tr>
+        </td>
+      </tr>  
+    </tbody>
+</table>
+
+## Research interests {.tabset} 
+
+### Multivariate statistical analysis
+
+- Dependence modeling
+
+- Bayesian inference
+
+- Statistical computation
+
+### Reliability analysis
+
+- Competing risks model
+
+- Reliablility estimation
+
+- Accelerated life testing
+
+- Testing design
+
+
+## Projects  {.tabset} 
+
+### 2020
+
+**Bayesian classification of multivariate time series using vine copula** (joint work with Prof. [Claudia Czado](https://www.groups.ma.tum.de/statistics/personen/claudia-czado/))
+
+---------------------------------------------------------------------- --------------------------------------------------------------------
+We introduce a vine copula based approach to                           <input type="image" src="images/Figure-png-small2.png" alt="Submit" width="148" height="148">
+analyze multivariate time series exhibiting complex dependence
+structures as well as nonstationary behavior dependence, and employ 
+Bayesian classifier to perform classification. 
+This approach will be applied to time
+series derived from  a neural activity experiment to 
+classify the opening and closing of the eyes. The performance 
+to other classification methods will be investigated.  
+
+---------------------------------------------------------------------- --------------------------------------------------------------------
+
+**Dependence Modeling and Bayesian Reliability Analysis for Competing Risks Data**
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Dependent competing risks model is widespread in relaibility analysis  
+of products or systems. It is of importance to capture the dependence information of failure causes.
+We apply vine copula to model the complex dependence relationship and assess the reliability based on Bayesian framework.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+### 2019
+
+**Bayesian analysis for dependent competing risks model**
+
+-----------------------------------------------------------------------------------------
+Description
+
+![](images/garching.jpg)
+
+-----------------------------------------------------------------------------------------
+
+## Teaching
+
+[MA-1] Linear Algebra
+
+[MA-2] Bayesian inference
+
+
+## Markdown References 
+
+- [Panoc markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)
+
+- [Basic synax](https://www.markdownguide.org/basic-syntax/ "The suggested material")
+
+- [Definitive Guide](https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html)
+
+- [Steps for R markdown website using Rstudio](https://livefreeordichotomize.com/2017/08/08/how-to-make-an-rmarkdown-website/)
+
+- [R Tutorial Chinese](https://www.math.pku.edu.cn/teachers/lidf/docs/Rbook/html/_Rbook/markdown.html)
+
+- [R markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/bibliography.html)
+
+- [Authoring books with R markdown](https://bookdown.org/yihui/bookdown/citations.html)
+
+    - For citation using natbib or biblatex, document output format is limited to **PDF**
+    
+    - The default method is to use a Pandoc helper program called pandoc-citeproc, which follows the specifications of the Citation Style Language (CSL) and obtains specific formatting instructions from one of the huge number of available CSL style files.
+    
+    - For any non-PDF output format, pandoc-citeproc is the only available option. If consistency across PDF and non-PDF output formats is important, use pandoc-citeproc throughout.
+    
+- [Pandoc guide](https://pandoc.org/MANUAL.html#metadata-blocks, "Metadata-blocks")
+
+- [Html_document themes](https://bootswatch.com/3/)
+
+- [Creating website in R-Tutorials](https://www.emilyzabor.com/tutorials/rmarkdown_websites_tutorial.html)
+
+## Publications
