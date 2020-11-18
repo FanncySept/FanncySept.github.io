@@ -46,7 +46,7 @@ csl: annals-of-the-institute-of-statistical-mathematics.csl
 
 - Competing risks model
 
-- Reliablility estimation
+- Reliability estimation
 
 - Accelerated life testing
 
@@ -74,7 +74,7 @@ to other classification methods will be investigated.
 **Dependence Modeling and Bayesian Reliability Analysis for Competing Risks Data**
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-Dependent competing risks model is widespread in relaibility analysis  
+Dependent competing risks model is widespread in reliability analysis  
 of products or systems. It is of importance to capture the dependence information of failure causes.
 We apply vine copula to model the complex dependence relationship and assess the reliability based on Bayesian framework.
 
