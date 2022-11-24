@@ -1,9 +1,10 @@
 ---
 pagetitle: C. Zhang
 bibliography: Fanncy20201113.bib
-nocite: "@Zhang2017, @Afify2019, @Bai2020, @Zhang2017a, @Zhang2016, @Liu2017, @Dey2017,
-  @Zhang2016a, \n@Wu2017, @Dey2017a, @Zhang2017b, @Nassar2018,  @Zhang2018, @Wang2021,
-  @Wang2021b, @Nassar2022,\n@Zhang2022\n"
+# nocite: "@Zhang2017, @Afify2019, @Bai2020, @Zhang2017a, @Zhang2016, @Liu2017, @Dey2017,
+#   @Zhang2016a, \n@Wu2017, @Dey2017a, @Zhang2017b, @Nassar2018,  @Zhang2018, @Wang2021,
+#   @Wang2021b, @Nassar2022,\n@Zhang2022\n"
+nocite: '@*'
 csl: "annals-of-the-institute-of-statistical-mathematics.csl"
 output: pdf_document
 ---
