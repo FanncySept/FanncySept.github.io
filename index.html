@@ -13,22 +13,36 @@
 
 <title>C. Zhang</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -41,30 +55,27 @@ if (window.hljs) {
 
 
 
+
 <style type="text/css">
-h1 {
-  font-size: 34px;
+/* for pandoc --citeproc since 2.11 */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
 }
-h1.title {
-  font-size: 38px;
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-h2 {
-  font-size: 30px;
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-h3 {
-  font-size: 24px;
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
 }
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
+div.csl-indent {
+  margin-left: 2em;
 }
 </style>
 
@@ -77,10 +88,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,40 +104,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 51px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
-.section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -158,7 +138,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -170,7 +150,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -181,10 +161,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -196,7 +189,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -281,7 +273,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -307,10 +299,13 @@ $(document).ready(function () {
 <font size=6> Chunfang Zhang</font>
 </p>
 <p align="left">
-<font size=4> School of Mathematics and Statistics, <br> Xidian University, <br> No. 2 South Taibai Road, <br> Xi’an, Shaanxi 710071, China </font> </a>
+<font size=4> School of Mathematics and Statistics, <br> Xidian
+University, <br> No. 2 South Taibai Road, <br> Xi’an, Shaanxi 710071,
+China </font> </a>
 </p>
 <p align="left">
-Contact: <a href="mailto:cfzhang917@xidian.edu.cn" class="email">cfzhang917@xidian.edu.cn</a>
+Contact: <a href="mailto:cfzhang917@xidian.edu.cn"
+class="email">cfzhang917@xidian.edu.cn</a>
 </p>
 <p align="left">
 Office: 508, Xida Building III
@@ -322,7 +317,7 @@ Office: 508, Xida Building III
 </tbody>
 </table>
 <div id="research-interests" class="section level2 tabset">
-<h2>Research interests</h2>
+<h2 class="tabset">Research interests</h2>
 <div id="multivariate-statistical-analysis" class="section level3">
 <h3>Multivariate statistical analysis</h3>
 <ul>
@@ -342,79 +337,220 @@ Office: 508, Xida Building III
 </div>
 </div>
 <div id="projects" class="section level2 tabset">
-<h2>Projects</h2>
+<h2 class="tabset">Projects</h2>
 <div id="section" class="section level3">
-<h3>2020</h3>
-<p><strong>Bayesian classification of multivariate time series using vine copula</strong> (joint work with Prof. <a href="https://www.groups.ma.tum.de/statistics/personen/claudia-czado/">Claudia Czado</a>)</p>
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left">We introduce a vine copula based approach to analyze multivariate time series exhibiting complex dependence structures as well as nonstationary behavior dependence, and employ Bayesian classifier to perform classification. This approach will be applied to time series derived from a neural activity experiment to classify the opening and closing of the eyes. The performance to other classification methods will be investigated.</td>
-<td><input type="image" src="images/Figure-png-small2.png" alt="Submit" width="148" height="148"></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Dependence Modeling and Bayesian Reliability Analysis for Competing Risks Data</strong></p>
+<h3>2023</h3>
+<p><strong>Multi-state system reliability analysis with dependent states
+based on vine copula</strong></p>
 <table>
 <colgroup>
 <col width="100%" />
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">Dependent competing risks model is widespread in reliability analysis of products or systems. It is of importance to capture the dependence information of failure causes. We apply vine copula to model the complex dependence relationship and assess the reliability based on Bayesian framework.</td>
+<td>It is common to attribute a unit with two states, i.e., working and
+failure. However modern products ans systems usually exhibit more than
+two states, and these states are dependent. This implies the current
+state is influenced by the last states. It is an interesting topic to
+model the dependence among unit states and evaluate the
+reliability.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section-1" class="section level3">
+<h3>2022</h3>
+<p><strong>Reliability modeling for series system with dependent
+bivariate performance components</strong></p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>For a long lifespan system the failure time often can not observed.
+Instead degradation data is useful for reliability modeling. With the
+degradation data for each performance characteristics, we propose a
+copula based dependent degradation reliability model and estimate the
+reliability characteristics.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section-2" class="section level3">
+<h3>2020</h3>
+<p><strong>Bayesian classification of multivariate time series using
+vine copula</strong> (joint work with Prof. <a
+href="https://www.groups.ma.tum.de/statistics/personen/claudia-czado/">Claudia
+Czado</a>)</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">We introduce a vine copula based approach to analyze
+multivariate time series exhibiting complex dependence structures as
+well as nonstationary behavior dependence, and employ Bayesian
+classifier to perform classification. This approach will be applied to
+time series derived from a neural activity experiment to classify the
+opening and closing of the eyes. The performance to other classification
+methods will be investigated.</td>
+<td><input type="image" src="images/Figure-png-small2.png" alt="Submit" width="148" height="148"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Dependence Modeling and Bayesian Reliability Analysis for
+Competing Risks Data</strong></p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="left">Dependent competing risks model is widespread in
+reliability analysis of products or systems. It is of importance to
+capture the dependence information of failure causes. We apply vine
+copula to model the complex dependence relationship and assess the
+reliability based on Bayesian framework.</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div id="publications" class="section level2 unnumbered">
-<h2>Publications</h2>
-<div id="refs" class="references">
-<div id="ref-Afify2019">
-<p>Afify, A. Z., Suzuki, A. K., Zhang, C., &amp; Nassar, M. (2019). On three-parameter exponential distribution: properties, Bayesian and non-Bayesian estimation based on complete and censored samples. <em>Communications in Statistics: Simulation and Computation</em>. <a href="https://doi.org/10.1080/03610918.2019.1636995">https://doi.org/10.1080/03610918.2019.1636995</a></p>
+<h2 class="unnumbered">Publications</h2>
+<div id="refs" class="references csl-bib-body hanging-indent"
+line-spacing="2">
+<div id="ref-Afify2019" class="csl-entry">
+Afify, A. Z., Suzuki, A. K., Zhang, C., &amp; Nassar, M. (2019). <span
+class="nocase">On three-parameter exponential distribution: properties,
+Bayesian and non-Bayesian estimation based on complete and censored
+samples</span>. <em>Communications in Statistics: Simulation and
+Computation</em>. <a
+href="https://doi.org/10.1080/03610918.2019.1636995">https://doi.org/10.1080/03610918.2019.1636995</a>
 </div>
-<div id="ref-Bai2020">
-<p>Bai, X., Shi, Y., Liu, Y., &amp; Zhang, C. (2020). Statistical inference for constant-stress accelerated life tests with dependent competing risks from Marshall-Olkin bivariate exponential distribution. <em>Quality and Reliability Engineering International</em>, <em>36</em>(2), 511–528. <a href="https://doi.org/10.1002/qre.2582">https://doi.org/10.1002/qre.2582</a></p>
+<div id="ref-Bai2020" class="csl-entry">
+Bai, X., Shi, Y., Liu, Y., &amp; Zhang, C. (2020). <span
+class="nocase">Statistical inference for constant-stress accelerated
+life tests with dependent competing risks from Marshall-Olkin bivariate
+exponential distribution</span>. <em>Quality and Reliability Engineering
+International</em>, <em>36</em>(2), 511–528. <a
+href="https://doi.org/10.1002/qre.2582">https://doi.org/10.1002/qre.2582</a>
 </div>
-<div id="ref-Dey2017a">
-<p>Dey, S., Alzaatreh, A., Zhang, C., &amp; Kumar, D. (2017). A New Extension of Generalized Exponential Distribution with Application to Ozone Data. <em>Ozone: Science and Engineering</em>, <em>39</em>(4), 273–285. <a href="https://doi.org/10.1080/01919512.2017.1308817">https://doi.org/10.1080/01919512.2017.1308817</a></p>
+<div id="ref-Dey2017a" class="csl-entry">
+Dey, S., Alzaatreh, A., Zhang, C., &amp; Kumar, D. (2017). <span
+class="nocase">A New Extension of Generalized Exponential Distribution
+with Application to Ozone Data</span>. <em>Ozone: Science and
+Engineering</em>, <em>39</em>(4), 273–285. <a
+href="https://doi.org/10.1080/01919512.2017.1308817">https://doi.org/10.1080/01919512.2017.1308817</a>
 </div>
-<div id="ref-Dey2017">
-<p>Dey, S., Zhang, C., Asgharzadeh, A., &amp; Ghorbannezhad, M. (2017). Comparisons of Methods of Estimation for the NH Distribution. <em>Annals of Data Science</em>, <em>4</em>(4), 441–455. <a href="https://doi.org/10.1007/s40745-017-0114-3">https://doi.org/10.1007/s40745-017-0114-3</a></p>
+<div id="ref-Dey2017" class="csl-entry">
+Dey, S., Zhang, C., Asgharzadeh, A., &amp; Ghorbannezhad, M. (2017).
+<span class="nocase">Comparisons of Methods of Estimation for the NH
+Distribution</span>. <em>Annals of Data Science</em>, <em>4</em>(4),
+441–455. <a
+href="https://doi.org/10.1007/s40745-017-0114-3">https://doi.org/10.1007/s40745-017-0114-3</a>
 </div>
-<div id="ref-Dey2021">
-<p>Dey, S., Zhang, C., &amp; Saha, M. (2021). Classical and Bayesian estimation of the index <span class="math inline">\(C_{\text{pmk}}\)</span> and its confidence intervals for normally distributed quality characteristic. <em>Journal of Statistical Computation and Simulation</em>, 1–24. <a href="https://doi.org/10.1080/00949655.2021.1879079">https://doi.org/10.1080/00949655.2021.1879079</a></p>
+<div id="ref-Liu2017" class="csl-entry">
+Liu, B., Shi, Y., Cai, J., Bai, X., &amp; Zhang, C. (2017). <span
+class="nocase">Nonparametric Bayesian Analysis for Masked Data from
+Hybrid Systems in Accelerated Lifetime Tests</span>. <em>IEEE
+Transactions on Reliability</em>, <em>66</em>(3), 662–676. <a
+href="https://doi.org/10.1109/TR.2017.2704582">https://doi.org/10.1109/TR.2017.2704582</a>
 </div>
-<div id="ref-Liu2017">
-<p>Liu, B., Shi, Y., Cai, J., Bai, X., &amp; Zhang, C. (2017). Nonparametric Bayesian Analysis for Masked Data from Hybrid Systems in Accelerated Lifetime Tests. <em>IEEE Transactions on Reliability</em>, <em>66</em>(3), 662–676. <a href="https://doi.org/10.1109/TR.2017.2704582">https://doi.org/10.1109/TR.2017.2704582</a></p>
+<div id="ref-Nassar2018" class="csl-entry">
+Nassar, M., Abo-Kasem, O., Zhang, C., &amp; Dey, S. (2018). <span
+class="nocase">Analysis of Weibull Distribution Under Adaptive Type-II
+Progressive Hybrid Censoring Scheme</span>. <em>Journal of the Indian
+Society for Probability and Statistics</em>, <em>19</em>(1), 25–65. <a
+href="https://doi.org/10.1007/s41096-018-0032-5">https://doi.org/10.1007/s41096-018-0032-5</a>
 </div>
-<div id="ref-Nassar2018">
-<p>Nassar, M., Abo-Kasem, O., Zhang, C., &amp; Dey, S. (2018). Analysis of Weibull Distribution Under Adaptive Type-II Progressive Hybrid Censoring Scheme. <em>Journal of the Indian Society for Probability and Statistics</em>, <em>19</em>(1), 25–65. <a href="https://doi.org/10.1007/s41096-018-0032-5">https://doi.org/10.1007/s41096-018-0032-5</a></p>
+<div id="ref-Nassar2022" class="csl-entry">
+Nassar, M., Alotaibi, R., &amp; Zhang, C. (2022). <span
+class="nocase">Estimation of Reliability Indices for Alpha Power
+Exponential Distribution Based on Progressively Censored Competing Risks
+Data</span>. <em>Mathematics</em>, 1–24.
 </div>
-<div id="ref-Wu2017">
-<p>Wu, M., Shi, Y., &amp; Zhang, C. (2017). Statistical analysis of dependent competing risks model in accelerated life testing under progressively hybrid censoring using copula function. <em>Communications in Statistics: Simulation and Computation</em>, <em>46</em>(5), 4004–4017. <a href="https://doi.org/10.1080/03610918.2015.1080836">https://doi.org/10.1080/03610918.2015.1080836</a></p>
+<div id="ref-Wang2021b" class="csl-entry">
+Wang, L., Tripathi, Y. M., Dey, S., Zhang, C., &amp; Wu, K. (2022).
+<span class="nocase">Analysis for constant-stress model on
+multicomponent system from generalized inverted exponential distribution
+with stress dependent parameters</span>. <em>Mathematics and Computers
+in Simulation</em>, <em>194</em>, 285–307. <a
+href="https://doi.org/10.1016/j.matcom.2021.11.026">https://doi.org/10.1016/j.matcom.2021.11.026</a>
 </div>
-<div id="ref-Zhang2016">
-<p>Zhang, C., &amp; Shi, Y. (2016). Estimation of the extended Weibull parameters and acceleration factors in the step-stress accelerated life tests under an adaptive progressively hybrid censoring data. <em>Journal of Statistical Computation and Simulation</em>, <em>86</em>(16), 3303–3314. <a href="https://doi.org/10.1080/00949655.2016.1166366">https://doi.org/10.1080/00949655.2016.1166366</a></p>
+<div id="ref-Wang2021" class="csl-entry">
+Wang, L., Zhang, C., Tripathi, Y. M., Dey, S., &amp; Wu, S. J. (2021).
+<span class="nocase">Reliability analysis of Weibull multicomponent
+system with stress-dependent parameters from accelerated life
+data</span>. <em>Quality and Reliability Engineering International</em>,
+<em>37</em>(6), 2603–2621. <a
+href="https://doi.org/10.1002/qre.2878">https://doi.org/10.1002/qre.2878</a>
 </div>
-<div id="ref-Zhang2017a">
-<p>Zhang, C., &amp; Shi, Y. (2017a). Optimum simple accelerated life tests based on progressively Type-I hybrid censoring. <em>International Journal of Systems Assurance Engineering and Management</em>, <em>8</em>(s2), 849–856. <a href="https://doi.org/10.1007/s13198-016-0532-1">https://doi.org/10.1007/s13198-016-0532-1</a></p>
+<div id="ref-Wu2017" class="csl-entry">
+Wu, M., Shi, Y., &amp; Zhang, C. (2017). <span
+class="nocase">Statistical analysis of dependent competing risks model
+in accelerated life testing under progressively hybrid censoring using
+copula function</span>. <em>Communications in Statistics: Simulation and
+Computation</em>, <em>46</em>(5), 4004–4017. <a
+href="https://doi.org/10.1080/03610918.2015.1080836">https://doi.org/10.1080/03610918.2015.1080836</a>
 </div>
-<div id="ref-Zhang2017b">
-<p>Zhang, C., &amp; Shi, Y. (2017b). Statistical prediction of failure times under generalized progressive hybrid censoring in a simple step-stress accelerated competing risks model. <em>Journal of Systems Engineering and Electronics</em>, <em>28</em>(2), 282–291. <a href="https://doi.org/10.21629/JSEE.2017.02.10">https://doi.org/10.21629/JSEE.2017.02.10</a></p>
+<div id="ref-Zhang2016" class="csl-entry">
+Zhang, C., &amp; Shi, Y. (2016). <span class="nocase">Estimation of the
+extended Weibull parameters and acceleration factors in the step-stress
+accelerated life tests under an adaptive progressively hybrid censoring
+data</span>. <em>Journal of Statistical Computation and Simulation</em>,
+<em>86</em>(16), 3303–3314. <a
+href="https://doi.org/10.1080/00949655.2016.1166366">https://doi.org/10.1080/00949655.2016.1166366</a>
 </div>
-<div id="ref-Zhang2017">
-<p>Zhang, C., Shi, Y., Bai, X., &amp; Fu, Q. (2017). Inference for constant-stress accelerated life tests with dependent competing risks from bivariate Birnbaum-Saunders distribution based on adaptive progressively hybrid censoring. <em>IEEE Transactions on Reliability</em>, <em>66</em>(1), 111–122. <a href="https://doi.org/10.1109/TR.2016.2639583">https://doi.org/10.1109/TR.2016.2639583</a></p>
+<div id="ref-Zhang2017b" class="csl-entry">
+Zhang, C., &amp; Shi, Y. (2017b). <span class="nocase">Statistical
+prediction of failure times under generalized progressive hybrid
+censoring in a simple step-stress accelerated competing risks
+model</span>. <em>Journal of Systems Engineering and Electronics</em>,
+<em>28</em>(2), 282–291. <a
+href="https://doi.org/10.21629/JSEE.2017.02.10">https://doi.org/10.21629/JSEE.2017.02.10</a>
 </div>
-<div id="ref-Zhang2016a">
-<p>Zhang, C., Shi, Y., &amp; Wu, M. (2016). Statistical inference for competing risks model in step-stress partially accelerated life tests with progressively Type-I hybrid censored Weibull life data. <em>Journal of Computational and Applied Mathematics</em>, <em>297</em>, 65–74. <a href="https://doi.org/10.1016/j.cam.2015.11.002">https://doi.org/10.1016/j.cam.2015.11.002</a></p>
+<div id="ref-Zhang2017a" class="csl-entry">
+Zhang, C., &amp; Shi, Y. (2017a). <span class="nocase">Optimum simple
+accelerated life tests based on progressively Type-I hybrid
+censoring</span>. <em>International Journal of Systems Assurance
+Engineering and Management</em>, <em>8</em>(s2), 849–856. <a
+href="https://doi.org/10.1007/s13198-016-0532-1">https://doi.org/10.1007/s13198-016-0532-1</a>
 </div>
-<div id="ref-Zhang2018">
-<p>Zhang, C., &amp; Wu, M. (2018). Statistical Inference on Competing Risks Model from Exponentiated Weibull Distribution under Type-I Progressively Hybrid Censoring Data. <em>Chinese Journal of Applied Probability and Statistics</em>, <em>34</em>(4), 331–344. <a href="https://doi.org/10.3969/j.issn.1001-4268.2018.04.001">https://doi.org/10.3969/j.issn.1001-4268.2018.04.001</a></p>
+<div id="ref-Zhang2017" class="csl-entry">
+Zhang, C., Shi, Y., Bai, X., &amp; Fu, Q. (2017). <span
+class="nocase">Inference for constant-stress accelerated life tests with
+dependent competing risks from bivariate Birnbaum-Saunders distribution
+based on adaptive progressively hybrid censoring</span>. <em>IEEE
+Transactions on Reliability</em>, <em>66</em>(1), 111–122. <a
+href="https://doi.org/10.1109/TR.2016.2639583">https://doi.org/10.1109/TR.2016.2639583</a>
+</div>
+<div id="ref-Zhang2016a" class="csl-entry">
+Zhang, C., Shi, Y., &amp; Wu, M. (2016). <span
+class="nocase">Statistical inference for competing risks model in
+step-stress partially accelerated life tests with progressively Type-I
+hybrid censored Weibull life data</span>. <em>Journal of Computational
+and Applied Mathematics</em>, <em>297</em>, 65–74. <a
+href="https://doi.org/10.1016/j.cam.2015.11.002">https://doi.org/10.1016/j.cam.2015.11.002</a>
+</div>
+<div id="ref-Zhang2022" class="csl-entry">
+Zhang, C., Wang, L., Bai, X., &amp; Huang, J. (2022). <span
+class="nocase">Bayesian reliability analysis for copula based
+step-stress partially accelerated dependent competing risks
+model</span>. <em>Reliability Engineering &amp; System Safety</em>,
+108718. <a
+href="https://doi.org/10.1016/J.RESS.2022.108718">https://doi.org/10.1016/J.RESS.2022.108718</a>
+</div>
+<div id="ref-Zhang2018" class="csl-entry">
+Zhang, C., &amp; Wu, M. (2018). <span class="nocase">Statistical
+Inference on Competing Risks Model from Exponentiated Weibull
+Distribution under Type-I Progressively Hybrid Censoring Data</span>.
+<em>Chinese Journal of Applied Probability and Statistics</em>,
+<em>34</em>(4), 331–344. <a
+href="https://doi.org/10.3969/j.issn.1001-4268.2018.04.001">https://doi.org/10.3969/j.issn.1001-4268.2018.04.001</a>
 </div>
 </div>
 </div>
@@ -428,7 +564,7 @@ Office: 508, Xida Building III
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -446,7 +582,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
