@@ -72,7 +72,7 @@ It is common to attribute a unit with two states, i.e., working and failure. How
 **Reliability modeling for series system with dependent bivariate performance components**
 
 -------------------------------------------------------------------------------------------------------------------------------------------
-For a long lifespan system the failure time often can not observed. Instead degradation data is useful for reliability modeling. With the degradation data for each performance characteristics, we propose a copula based dependent degradation reliability model and estimate the reliability characteristics.
+For a long lifespan system the failure time often can not be observed. Instead degradation data is useful for reliability modeling. With the degradation data for each performance characteristics, we propose a copula based dependent degradation reliability model and estimate the reliability characteristics.
 
 -------------------------------------------------------------------------------------------------------------------------------------------
 
